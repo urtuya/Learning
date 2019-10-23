@@ -1,6 +1,6 @@
 #include "head.h"
 
-void	set_iso_coords(t_3dmap *map, double h_zarr, double siz)
+void	set_iso_coords(t_3dmap *map, double siz)
 {
 	double	prev_x;
 	double	prev_y;
@@ -13,7 +13,26 @@ void	set_iso_coords(t_3dmap *map, double h_zarr, double siz)
 	map->y = (-map->z + (prev_x + prev_y) * sin(0.523599)) * siz;
 }
 
+void		rotate(t_fdf *fdf)
+{
+    int		i;
+    int		j;
 
+	i = 0;
+	while (i < fdf->full->hei)
+	{
+		j = 0;
+		while (j < fdf->full->wid)
+		{
+			rot_y(&fdf->map[i][j], fdf->ang.a_y);
+			rot_x(&fdf->map[i][j], fdf->ang.a_x);
+			if (fdf->proj)
+				rot_z(&fdf->map[i][j], -fdf->ang.a_x);
+			j++;
+		}
+		i++;
+	}
+}
 
 void	clean_main_map(t_fdf *fdf)
 {
