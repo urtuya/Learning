@@ -1,4 +1,4 @@
-.name "NEW"
-.comment "TESTING"
+.name "kek"
+.comment "top"
 
-st r1, r2
+live %-2

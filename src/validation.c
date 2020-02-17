@@ -1,34 +1,5 @@
 #include "../inc/head.h"
 
-int		bin2int(unsigned char *buf, int size)
-{
-	int	i;
-	int	tmp;
-	int ret;
-
-	i = 0;
-	ret = 0;
-	tmp = size * 8 - 8;
-	while (i < size)
-	{
-		ret += buf[i] << tmp;
-		tmp -= 8;
-		i++;
-	}
-	return (ret);
-}
-
-void	bin2str(int fd, char *buf, int len)
-{
-	int		size;
-
-	size = read(fd, buf, len);
-	if (size < 0)
-		error("Error reading file\n", "");
-	if (size != len)
-		error("Invalid file\n", "");
-}
-
 void	champ_name(int fd, t_champ *champ)
 {
 	int size;
