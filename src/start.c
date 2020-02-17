@@ -51,11 +51,9 @@ int		try_exec_oper(t_cursor *cursor, unsigned char *arena) // 	NEED CHECK FOR EV
 
 void	run_cursor(t_vm *vm, t_cursor *cursor)
 {
-	ft_printf("tut\n");
 	while (cursor)
 	{
 		get_oper_code(cursor, vm->arena);
-		ft_printf("ID: %d  op_code: %d\n", cursor->id, cursor->op_code);
 		if (cursor->cycles_before_op == 0)
 		{
 			if (try_exec_oper(cursor, vm->arena))					// get ready before exec_oper
@@ -72,7 +70,9 @@ void	in_cycle(t_vm *vm) //25 lines)))))))
 	t_cursor *cursor;
 
 	cursor = vm->cursor;
-	if (!cursor)
+	// if (!cursor)
+	
+	// 	ft_printf("hmmmm\n");
 	while (cursor)
 	{
 		if (vm->num_of_cycles == vm->flag.num)

@@ -36,7 +36,7 @@ int		main(int argc, char **argv)
 
 	// printf("NUM of cycles: %d\n", vm->num_of_cycles);
 	// printf("CYCLES TO DIE: %d\n", vm->cycles_to_die);
-	print_winner(vm->champ, vm->last_live);
+	// print_winner(vm->champ, vm->last_live);
 
 	return (0);
 }

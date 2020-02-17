@@ -421,7 +421,8 @@ void	op_st(t_cursor *cursor, t_vm *vm)
 		// //ft_printf("{red}arg[1] = %d\n", arg[1] % IDX_MOD);
 		// //ft_printf("WRITING TO %d\n", cursor->cur_position + (arg[1] % IDX_MOD));
 		set_to_arena(arena, addr, cursor->r[arg[0]]);
-		print_arena_2(arena, addr, addr + 4);
+		// print_arena_2(arena, addr, addr + 4);
+		// exit(0);
 	}
 	else
 		ft_printf("NOPEEPFDFSG\n");
